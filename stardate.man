@@ -1,0 +1,198 @@
+
+
+
+STARDATE(1)                                           STARDATE(1)
+
+
+NAME
+       stardate - convert between stardates and other calendars
+
+SYNOPSIS
+       stardate [ options ] [ date ... ]
+
+DESCRIPTION
+       stardate  interprets  the  dates  specified on its command
+       line, and outputs them in the  formats  specified  by  the
+       options.
+
+       If no dates are specified, the current time, read from the
+       system clock, is used.  If no options are specified, dates
+       are  output  in  the  form of stardates.  Consequently, if
+       stardate is invoked with no arguments, it outputs the cur-
+       rent  time as a stardate.  This performs much the same job
+       as date(1), but with a more interesting form of output.
+
+       Dates on output are always rounded down, and  so  in  some
+       cases  will  generate different output if reused as input.
+       This rounding is always such that the output date  is  the
+       latest time, expressible in the format being used, that is
+       no later than the time specified as input.
+
+       This program handles dates from 0001=01=01 (Julian  calen-
+       dar)  up to (currently) (2^64 - 1) seconds later, which is
+       beyond the year (5 x 10^11).  Any date within  this  range
+       can  be  input or output in any of the formats the program
+       supports.  Consequently, any date the program outputs will
+       be  accepted  as  input.   The only exception is for dates
+       within the first half  second  of  the  acceptable  range,
+       where   the   value   output  in  the  quadcent  calendar,
+       ``0000*12*31T02:03:16'' (chosen due to the  rounding  men-
+       tioned above), is actually outside the acceptable range.
+
+       The  stardate code is based on information in version 1 of
+       the Stardates in Star Trek FAQ, which is regularly  posted
+       to the USENET newsgroup rec.arts.startrek.tech.
+
+OPTIONS
+       -s[n]  Output the date as a stardate.  n, if given, speci-
+              fies the number of digits output after the  decimal
+              point.   If  not  specified, it defaults to 2.  The
+              output looks like ``[i]nnnn.dd''.
+
+              When 2 decimal places are used, the output  of  the
+              current  time  changes every 172.8 seconds.  (Actu-
+              ally, because of the resolution of  C  time,  four-
+              fifths  of  the  changes  are 173 seconds after the
+              previous change, and the other fifth are  172  sec-
+              onds after.)
+
+       -j     Output  the  date as a date in the Julian calendar,
+              with   UTC   time.    The   output    looks    like
+
+
+
+Stardates 1.6    9 February 1997, SD [-31]8857.62               1
+
+
+
+
+
+STARDATE(1)                                           STARDATE(1)
+
+
+              ``yyyy=mm=ddThh:mm:ss''.
+
+       -g     Output  the  date as a date in the Gregorian calen-
+              dar, with UTC time.  The output looks like  ``yyyy-
+              mm-ddThh:mm:ss''.
+
+       -q     Output the date as a date in the Quadcent calendar,
+              with   UTC   time.    The   output    looks    like
+              ``yyyy*mm*ddThh:mm:ss''.
+
+              This  calendar  is explained in detail in the Star-
+              dates in Star Trek FAQ.  Briefly, it  uses  seconds
+              that are approximately 1.00066 SI seconds long, and
+              has no leap years.  Each 400 years in this calendar
+              is  exactly  as  long as 400 years in the Gregorian
+              calendar, but all years in  the  quadcent  calendar
+              are the same length.
+
+       -u     Output the date in the form of the traditional Unix
+              time.  This is a number of seconds  since  midnight
+              UTC   on   1970-01-01.    The   output  looks  like
+              ``Unnnnnnnnn''.
+
+       -x     Output the date in the form of the traditional Unix
+              time,   in  hexadecimal.   The  output  looks  like
+              ``U0xnnnnnnnnn''.
+
+INPUT FORMATS
+       dates may be specified in any of the  output  formats,  as
+       described above, with a few variations allowed.  More pre-
+       cisely, the following forms are permitted:
+
+       [issue]nnnn
+       [-issue]nnnn
+       [issue]nnnn.dd
+       [-issue]nnnn.dd
+              A stardate.  The  issue  number,  with  the  square
+              brackets,  is  mandatory.   The  fractional part is
+              optional.
+
+              Stardate   ``[0]0000.0''   is   midnight   UTC   on
+              2162-01-04;  negative  issue numbers indicate times
+              before that.  If issue is less than 20, the  number
+              must  be  in the range [0, 10000).  If equal to 20,
+              [0, 5006).  If greater than 20, [0,  100000).   The
+              FAQ explains these range changes.
+
+       yyyy=mm=dd
+       yyyy=mm=ddThh:mm
+       yyyy=mm=ddThh:mm:ss
+              A  date  in  the Julian calendar, optionally with a
+              time in UTC.
+
+
+
+
+
+Stardates 1.6    9 February 1997, SD [-31]8857.62               2
+
+
+
+
+
+STARDATE(1)                                           STARDATE(1)
+
+
+       yyyy-mm-dd
+       yyyy-mm-ddThh:mm
+       yyyy-mm-ddThh:mm:ss
+              A date in the Gregorian calendar, optionally with a
+              time in UTC.
+
+       yyyy*mm*dd
+       yyyy*mm*ddThh:mm
+       yyyy*mm*ddThh:mm:ss
+              A  date in the Quadcent calendar, optionally with a
+              time in UTC.
+
+       Unnnnnnnnnn
+       U-nnnnnnnnnn
+       U0xnnnnnnnnnn
+       U-0xnnnnnnnnnn
+              A Unix time specification -  a  number  of  seconds
+              since  1970-01-01.   A  negative number indicates a
+              time before 1970.  In the forms  with  ``0x'',  the
+              number is in hexadecimal.
+
+       Case of alphabetic characters in input is ignored.
+
+AUTHOR
+       Andrew Main <zefram@fysh.org>
+
+SEE ALSO
+       date(1), Stardates in Star Trek FAQ
+
+BUGS
+       This program will not handle dates BCE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stardates 1.6    9 February 1997, SD [-31]8857.62               3
+
+

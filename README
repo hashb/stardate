@@ -1,9 +1,9 @@
                        =================================
                           STARDATES IN STAR TREK FAQ
                            Computer-Related Addenda
-                                  Version 1.6
+                                 Version 1.6.1
                        by Andrew Main <zefram@fysh.org>
-                       1997-02-09, stardate [-31]8857.62
+                       1997-12-26, stardate [-30]0458.96
                        =================================
 
 
@@ -12,7 +12,7 @@
 1.  Table of contents
 2.  About the Stardates in Star Trek FAQ
 3.  The `stardate' program
-4.  Other version of the `stardate' program
+4.  Other versions of the `stardate' program
 5.  Adding a stardate header to email messages
 6.  Obtaining the latest version of the FAQ
 7.  Legal notice
@@ -25,10 +25,10 @@ The FAQ describes a system of stardates, and how it was developed.  See
 section 6 for information on getting hold of the latest version.
 
 The version numbers of this package and the FAQ will generally correspond.
-For example, this is version 1.6 of the Computer-Related Addenda package, and
-was prepared at the same time as version 1.6 of the FAQ.  Consequently, if you
-have differing version numbers, it probably means that whichever item you have
-with the lower version number is out of date.
+For example, this is version 1.6.1 of the Computer-Related Addenda package,
+and was prepared at the same time as version 1.6 of the FAQ.  Consequently, if
+you have differing version numbers, it probably means that whichever item you
+have with the lower version number is out of date.
 
 
 3.  THE `STARDATE' PROGRAM
@@ -39,9 +39,15 @@ formats.  It can display dates in any of these five formats.  The date formats
 supported are stardates (of course), the Julian, Gregorian and Quadcent
 calendars, and the traditional Unix form of date specification.
 
-In the Unix distributions, `stardate.1' is the nroff source for the program's
-manual page.  In other distributions, `stardate.man' is a plain text formatted
-version.
+Note that the previous version of this program, distributed in version 1.6 of
+this package, gave the wrong results in some cases when compiled in a 16-bit
+(or in fact anything up to 31-bit) environment (such as DOS).  This bug is
+fixed in this version.  All versions produce correct results in a 32-bit (or
+greater) environment.
+
+`stardate.1' is the nroff source for the program's Unix-style manual page.
+(On Unix systems, this should be installed in the appropriate man directory.)
+`stardate.man' is a plain text formatted version of stardate.1.
 
 Please do not ask me for an executable of this program.  I have the facilities
 to compile only for a few Unix platforms; definitely not DOS.  Similarly, do
@@ -51,12 +57,12 @@ languages, and several people have bolted GUIs onto them, but I haven't kept
 track of these efforts.
 
 
-4.  OTHER VERSION OF THE `STARDATE' PROGRAM
+4.  OTHER VERSIONS OF THE `STARDATE' PROGRAM
 
 As this stardate program is completely new (at the time of writing), this is
-the only version of it.  However, if past performances are repeated, this will
-only be a temporary situation.  If you are considering translating this
-program into another language, or reimplementing it with a different
+the only implementation of it.  However, if past performances are repeated,
+this will only be a temporary situation.  If you are considering translating
+this program into another language, or reimplementing it with a different
 interface, please read this section.
 
 Several people have asked me for permission to write programs based on the
