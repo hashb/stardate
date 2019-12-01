@@ -1,0 +1,153 @@
+                       =================================
+                          STARDATES IN STAR TREK FAQ
+                           Computer-Related Addenda
+                                  Version 1.6
+                       by Andrew Main <zefram@fysh.org>
+                       1997-02-09, stardate [-31]8857.62
+                       =================================
+
+
+1.  TABLE OF CONTENTS
+
+1.  Table of contents
+2.  About the Stardates in Star Trek FAQ
+3.  The `stardate' program
+4.  Other version of the `stardate' program
+5.  Adding a stardate header to email messages
+6.  Obtaining the latest version of the FAQ
+7.  Legal notice
+
+
+2.  ABOUT THE STARDATES IN STAR TREK FAQ
+
+This package is based on the Stardates in Star Trek FAQ available on USENET.
+The FAQ describes a system of stardates, and how it was developed.  See
+section 6 for information on getting hold of the latest version.
+
+The version numbers of this package and the FAQ will generally correspond.
+For example, this is version 1.6 of the Computer-Related Addenda package, and
+was prepared at the same time as version 1.6 of the FAQ.  Consequently, if you
+have differing version numbers, it probably means that whichever item you have
+with the lower version number is out of date.
+
+
+3.  THE `STARDATE' PROGRAM
+
+The file `stardate.c' is a C program that will manipulate dates in various
+formats.  It can display the current date, or a date specified in one of five
+formats.  It can display dates in any of these five formats.  The date formats
+supported are stardates (of course), the Julian, Gregorian and Quadcent
+calendars, and the traditional Unix form of date specification.
+
+In the Unix distributions, `stardate.1' is the nroff source for the program's
+manual page.  In other distributions, `stardate.man' is a plain text formatted
+version.
+
+Please do not ask me for an executable of this program.  I have the facilities
+to compile only for a few Unix platforms; definitely not DOS.  Similarly, do
+not ask me for a version in Pascal or any other language.  Some people have
+translated this program's predecessors into Pascal, Java, Haskell and other
+languages, and several people have bolted GUIs onto them, but I haven't kept
+track of these efforts.
+
+
+4.  OTHER VERSION OF THE `STARDATE' PROGRAM
+
+As this stardate program is completely new (at the time of writing), this is
+the only version of it.  However, if past performances are repeated, this will
+only be a temporary situation.  If you are considering translating this
+program into another language, or reimplementing it with a different
+interface, please read this section.
+
+Several people have asked me for permission to write programs based on the
+Stardates FAQ.  There is no need to do so.  While the FAQ itself is
+copyrighted, the stardate system it describes is not.  However, if you write
+such a program, please mention in its documentation that it is based on
+version 1 of the Stardates in Star Trek FAQ, and include some information on
+how to get hold of the FAQ.
+
+In a change from my previous policy, I will now maintain a list of alternate
+versions of this stardate program.  So if you write such a program, feel free
+to send me a brief description.  Future versions of this package will include
+a list of other stardate programs.
+
+
+5.  ADDING A STARDATE HEADER TO EMAIL MESSAGES
+
+If you use the Elm electronic mail reader to send email on a Unix system, it
+is possible to have an extra header line added to all your email messages,
+giving the stardate at which the message was sent.  To do this, you must make
+sure the `stardate' program is in your command path.  Then, add the following
+line to your ~/.elm/elmheaders file, or, if the file doesn't exist, create it
+containing only this line:
+
+X-Stardate: `stardate`
+
+(Note the backquotes.)  An extra line will then be added to the header of all
+email messages sent using Elm.
+
+
+6.  OBTAINING THE LATEST VERSION OF THE FAQ
+
+The Stardates in Star Trek FAQ is posted to the USENET newsgroup
+rec.arts.startrek.tech every 30 days.  It is cross-posted to rec.answers and
+news.answers.  It can be found by searching any of these newsgroups for the
+subject line "Stardates in Star Trek Mini-FAQ" (without the quotes).
+Depending on the configuration at your site, it is possible that it may be
+expired earlier than intended, and therefore not be available.
+
+It is also available for anonymous FTP from rtfm.mit.edu (18.70.0.209) as file
+/pub/usenet/news.answers/star-trek/stardates.  This will contain the last
+version to be distributed via USENET.  rtfm.mit.edu also has a number of
+mirrors, in which it is archived as star-trek/stardates.  These URLs point to
+a selection of mirrors around the world -- pick the one closest to you:
+
+<URL:ftp://rtfm.mit.edu/pub/usenet/news.answers/star-trek/stardates>
+<URL:ftp://src.doc.ic.ac.uk/usenet/news-faqs/news.answers/star-trek/stardates>
+<URL:ftp://ftp.pasteur.fr/pub/FAQ/star-trek/stardates>
+<URL:ftp://ftp.sunet.se/pub/usenet/news.answers/star-trek/stardates>
+<URL:ftp://hwarang.postech.ac.kr/pub/usenet/news.answers/star-trek/stardates>
+
+If you do not have access to FTP, you can obtain a copy from rtfm.mit.edu by
+email.  To do so, send an email message to <mail-server@rtfm.mit.edu>
+containing the line:
+
+send usenet/news.answers/star-trek/stardates
+
+As a last resort, you can obtain the latest version direct from the author by
+email.  To do so, send an email message to <zefram@fysh.org>, with the subject
+line "send stardates".  Messages for the attention of the author should be
+sent to the same address, using some other subject line.
+
+
+7.  LEGAL NOTICE
+
+Copyright (c) 1996, 1997 Andrew Main.  All rights reserved.
+
+Redistribution and use, in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer
+   in the documentation and/or other materials provided with the
+   distribution.
+3. All advertising materials mentioning features or use of this
+   software must display the following acknowledgement:
+       This product includes software developed by Andrew Main.
+4. The name of Andrew Main may not be used to endorse or promote
+   products derived from this software without specific prior
+   written permission.
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL ANDREW MAIN BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
